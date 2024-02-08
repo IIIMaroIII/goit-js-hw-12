@@ -5,11 +5,10 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url(./searcApi.css);
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  --font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -22,4 +21,50 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: #fff;
+
+  border: 1px solid #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+
+  background: #4e75ff;
+}
+button:hover {
+  background-color: #6c8cff;
+  border: 1px solid #6c8cff;
+}
+button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #cfcfcf;
+}
+
+.nav {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.nav-list {
+  font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #747bff;
 }
