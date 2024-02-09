@@ -1,17 +1,17 @@
-var d=(e,r,l)=>{if(!r.has(e))throw TypeError("Cannot "+l)};var p=(e,r,l)=>(d(e,r,"read from private field"),l?l.call(e):r.get(e)),f=(e,r,l)=>{if(r.has(e))throw TypeError("Cannot add the same private member more than once");r instanceof WeakSet?r.add(e):r.set(e,l)};/* empty css                      */import{i as g,S as h}from"./assets/vendor-5b791d57.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function l(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(t){if(t.ep)return;t.ep=!0;const o=l(t);fetch(t.href,o)}})();var n;class ${constructor(){f(this,n,"42204653-dde2ea6d5277704e408fb2018");this.BASE_URL="https://pixabay.com/api/"}getImages(r){const l=new URLSearchParams({key:p(this,n),q:r,image_type:"photo",orientation:"horizontal",safesearch:!0,per_page:50}),s=`${this.BASE_URL}?${l}`;return fetch(s).then(t=>{if(!t.ok)throw new Error(t.statusText);return t.json()})}}n=new WeakMap;const c="/vanilla-app-template/assets/error-bd282b8e.svg",S="/vanilla-app-template/assets/caution-fce7ed33.svg";function u(e="Hello",r="Type in your message, please",l="white",s=S){return g.show({titleSize:"16px",title:`${e}`,message:`${r}`,messageSize:"16px",closeOnEscape:!0,position:"topRight",backgroundColor:`${l}`,iconUrl:`${s}`})}function b(e){return e.map(({webformatURL:l,largeImageURL:s,tags:t,likes:o,views:i,comments:y,downloads:m})=>`<li class="gallery-item">
-        <a class="gallery-link" href="${s}">
+var g=(t,e,l)=>{if(!e.has(t))throw TypeError("Cannot "+l)};var p=(t,e,l)=>(g(t,e,"read from private field"),l?l.call(t):e.get(t)),y=(t,e,l)=>{if(e.has(t))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(t):e.set(t,l)};/* empty css                      */import{i as h,A as b,S as w}from"./assets/vendor-00ccef64.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))a(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function l(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(r){if(r.ep)return;r.ep=!0;const s=l(r);fetch(r.href,s)}})();const c="/vanilla-app-template/assets/error-bd282b8e.svg",L="/vanilla-app-template/assets/caution-fce7ed33.svg";function u(t="Hello",e="Type in your message, please",l="white",a=L){return h.show({titleSize:"16px",title:`${t}`,message:`${e}`,messageSize:"16px",closeOnEscape:!0,position:"topRight",backgroundColor:`${l}`,iconUrl:`${a}`})}var n;class S{constructor(){y(this,n,"42204653-dde2ea6d5277704e408fb2018");this.BASE_URL="https://pixabay.com/api/"}async getImages(e){return(await b.create({baseURL:this.BASE_URL,params:{key:p(this,n),q:e,image_type:"photo",orientation:"horizontal",safesearch:!0,per_page:15}}).get("")).data}isResponseEmpty(e){if(e.length!==0)return e;u("Error","Sorry, there are no images matching your search query. Please try again!","red",c)}}n=new WeakMap;function $(t){return t.map(({webformatURL:l,largeImageURL:a,tags:r,likes:s,views:i,comments:m,downloads:d})=>`<li class="gallery-item">
+        <a class="gallery-link" href="${a}">
           <img
             class="gallery-image"
             src="${l}"
-            data-source="${s}"
-            alt="${t}"
-            title="${t}"
+            data-source="${a}"
+            alt="${r}"
+            title="${r}"
           />
         </a>
         <ul class="gallery-info">
         <li class="gallery-infoItem">
         <h3 class="gallery-infoTitle">Likes</h3>
-        <p class="gallery-infoText">${o}</p>
+        <p class="gallery-infoText">${s}</p>
         </li>
         <li class="gallery-infoItem">
         <h3 class="gallery-infoTitle">Views</h3>
@@ -19,11 +19,11 @@ var d=(e,r,l)=>{if(!r.has(e))throw TypeError("Cannot "+l)};var p=(e,r,l)=>(d(e,r
         </li>
         <li class="gallery-infoItem">
         <h3 class="gallery-infoTitle">Comments</h3>
-        <p class="gallery-infoText">${y}</p>
+        <p class="gallery-infoText">${m}</p>
         </li>
         <li class="gallery-infoItem">
         <h3 class="gallery-infoTitle">Downloads</h3>
-        <p class="gallery-infoText">${m}</p>
+        <p class="gallery-infoText">${d}</p>
         </li>
-        </ul></li>`).join("").trim()}const L=new $,a={form:document.querySelector(".form"),btn:document.querySelector(".form--btn"),gallery:document.querySelector(".gallery"),loader:document.querySelector(".loader")};a.loader.style.display="none";a.form.addEventListener("submit",T);function T(e){e.preventDefault(),a.loader.style.display="block";const r=e.target.elements.formInput.value;if(!r)return a.loader.style.display="none",a.gallery.innerHTML="",u("Error","Please do your searching request, fill out the input","red",c);L.getImages(r.trim().toLowerCase()).then(({hits:l,...s})=>{a.loader.style.display="none",w(l),E(l),e.target.reset()}).catch(l=>{a.loader.style.display="none",u("Error",l,"red",c)})}function w(e){if(e.length!==0)return e;u("Error","Sorry, there are no images matching your search query. Please try again!","red",c)}function E(e){let r=new h(".gallery a",{captionDelay:250,captionsData:"alt"});const l=b(e);a.gallery.innerHTML=l,r.refresh()}
+        </ul></li>`).join("").trim()}const o={form:document.querySelector(".form"),btn:document.querySelector(".form--btn"),gallery:document.querySelector(".gallery"),loader:document.querySelector(".loader")},f=new S;o.loader.style.display="none";o.form.addEventListener("submit",E);async function E(t){t.preventDefault(),o.loader.style.display="block";const e=t.target.elements.formInput.value.trim().toLowerCase();if(!e)return o.loader.style.display="none",o.gallery.innerHTML="",u("Error","Please do your searching request, fill out the input","red",c);const{hits:l,...a}=await f.getImages(e);try{o.loader.style.display="none",f.isResponseEmpty(l),T(l),t.target.reset()}catch(r){o.loader.style.display="none",u("Error",r,"red",c)}}async function T(t){let e=await new w(".gallery a",{captionDelay:250,captionsData:"alt"});const l=await $(t);o.gallery.innerHTML=l,e.refresh()}
 //# sourceMappingURL=commonHelpers.js.map
