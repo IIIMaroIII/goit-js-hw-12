@@ -1,3 +1,27 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import iconCaution from '../img/caution.svg';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+export function showNotification({
+  title = 'Hello',
+  message = 'Type in your message, please',
+  backgroundColor = 'white',
+  icon = iconCaution,
+}) {
+  return iziToast.show({
+    titleSize: '16px',
+    title: `${title}`,
+    message: `${message}`,
+    messageSize: '16px',
+    closeOnEscape: true,
+    position: 'topRight',
+    backgroundColor: `${backgroundColor}`,
+    iconUrl: `${icon}`,
+  });
+}
+
 export function createGalleryItemMarkup(arr) {
   const galleryItem = arr
     .map(
@@ -43,4 +67,15 @@ export function createGalleryItemMarkup(arr) {
     .join('')
     .trim();
   return galleryItem;
+}
+
+export async function createAndRenderGallery(obj) {
+  let gallery = new SimpleLightbox('.gallery a', {
+    captionDelay: 250,
+    captionsData: 'alt',
+  });
+  const markup = createGalleryItemMarkup(obj);
+  const galleryRef = document.querySelector('.gallery');
+  galleryRef.insertAdjacentHTML('beforeend', markup);
+  gallery.refresh();
 }

@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Search API</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <form class="form">
+      <input
+        class="form--input"
+        type="text"
+        name="formInput"
+        placeholder="Search images"
+      />
+      <button class="form--btn" type="submit">Search</button>
+    </form>
+
+    <ul class="gallery"></ul>
+    <div class="loader-container">
+      <button class="form--btn js-loadMore" type="submit">Load More</button>
+      <span class="loader"></span>
+    </div>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>
