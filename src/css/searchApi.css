@@ -1,8 +1,7 @@
 .form {
   margin-bottom: 32px;
-  width: 371px;
-  margin-left: auto;
-  margin-right: auto;
+  min-width: 380px;
+  margin-left: 530px;
 }
 
 .gallery {
