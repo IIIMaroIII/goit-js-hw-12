@@ -3,38 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search API</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./sass/main.scss" />
+    <title>Search API</title>
   </head>
   <body>
     <form class="form">
       <input
-        class="form--input"
+        class="form__input js-submitBtn"
         type="text"
         name="formInput"
         placeholder="Search images"
       />
-      <button class="form--btn" type="submit">Search</button>
+      <button class="button" type="submit">Search</button>
     </form>
-
-    <ul class="gallery"></ul>
-    <div class="loader-container">
-      <button class="form--btn js-loadMore" type="submit">Load More</button>
-      <span class="loader"></span>
+    <div class="container">
+      <ul class="gallery"></ul>
+      <div class="loader-container">
+        <button class="button js-loadMore" type="submit">Load More</button>
+        <span class="loader"></span>
+      </div>
     </div>
+
     <script src="./main.js" type="module"></script>
   </body>
 </html>

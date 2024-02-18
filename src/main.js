@@ -11,7 +11,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const refs = {
   form: document.querySelector('.form'),
-  btn: document.querySelector('.form--btn'),
+  btn: document.querySelector('.js-submitBtn'),
   gallery: document.querySelector('.gallery'),
   loader: document.querySelector('.loader'),
   btnLoadMore: document.querySelector('.js-loadMore'),

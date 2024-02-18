@@ -1,3 +1,122 @@
+<!-- ================ SASS settings  ================== -->
+
+# npm add -D sass
+
+# npm install sass vite-plugin-sass vite-plugin-html vite-plugin-full-reload --save-dev
+
+# Replace vite.config.js
+
+<!--
+// vite.config.js
+
+import { defineConfig } from 'vite';
+import glob from 'glob';
+import injectHTML from 'vite-plugin-html-inject';
+import FullReload from 'vite-plugin-full-reload';
+import ViteSassPlugin from 'vite-plugin-sass';
+
+export default defineConfig(({ command }) => {
+  return {
+    define: {
+      [command === 'serve' ? 'global' : '_global']: {},
+    },
+    root: 'src',
+    build: {
+      sourcemap: true,
+
+      rollupOptions: {
+        input: glob.sync('./src/*.html'),
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+          entryFileNames: 'commonHelpers.js',
+        },
+      },
+      outDir: '../dist',
+    },
+    plugins: [
+      ViteSassPlugin({
+        // Enable source maps for Sass
+        sourceMap: true,
+      }),
+      injectHTML(),
+      FullReload(['./src/**/**.html']),
+    ],
+    css: {
+      // Extract CSS into a separate file during development
+      extract: true,
+    },
+  };
+});
+
+ -->
+
+import ViteSassPlugin from 'vite-plugin-sass'; import injectHTML from
+'vite-plugin-html'; import FullReload from 'vite-plugin-full-reload'; import
+glob from 'glob';
+
+export default defineConfig(({ command }) => { return { define: { [command ===
+'serve' ? 'global' : '_global']: {}, }, root: 'src', build: { sourcemap: true,
+
+      rollupOptions: {
+        input: glob.sync('./src/*.html'),
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+          entryFileNames: 'commonHelpers.js',
+        },
+      },
+      outDir: '../dist',
+    },
+    plugins: [
+      ViteSassPlugin({
+        // Enable source maps for Sass
+        sourceMap: true,
+      }),
+      injectHTML(),
+      FullReload(['./src/**/**.html']),
+    ],
+
+}; }); -->
+
+# import variables.scss in that file where you wanna use it.
+
+<!-- @import '../base/variables';
+
+body {
+  background-color: $primary-font-color;
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: $primary-font-color;
+} -->
+
+# Make list of imports of all your scss files.
+
+<!-- @import url('./base/_variables.scss');
+@import url('./utils/_modern-normalize.scss');
+@import url('./utils/_reset.scss');
+@import url('./utils/_hidden.scss');
+@import url('./components/_loader.container.scss');
+@import url('./components/_body.scss');
+@import url('./components/_form.scss');
+@import url('./components/_gallery.scss');
+ -->
+
+# Connect your main.scss file as <link> into html after linked fronts.
+
+<!-- <link rel="stylesheet" href="./sass/main.scss" /> -->
+
+<!-- ================================================== -->
+
 # Vanilla App Template
 
 Цей проект було створено за допомогою Vite. Для знайомства та налаштування
