@@ -61,6 +61,11 @@ async function onGetImages(e) {
     refs.loader.classList.add('hidden');
     pixabayApi.isResponseEmpty(hits);
     createAndRenderGallery(hits);
+    // let gallery = new SimpleLightbox('.gallery a', {
+    //   captionDelay: 250,
+    //   captionsData: 'alt',
+    // });
+    // gallery.refresh();
     e.target.reset();
   } catch (err) {
     refs.loader.classList.add('hidden');
@@ -75,7 +80,8 @@ async function onLoadMore(e) {
   try {
     pixabayApi.page += 1;
     const { hits, ...rest } = await pixabayApi.getImages();
-    refs.loader.classList.add('hidden');
+    refs.btnLoadMore.classList.add('hidden');
+    refs.loader.classList.remove('hidden');
     createAndRenderGallery(hits);
     checkButtonStatus();
     smootherScrolling();
@@ -83,6 +89,8 @@ async function onLoadMore(e) {
     refs.loader.classList.add('hidden');
     showNotification('Error', err, 'red', iconError);
   }
+  refs.btnLoadMore.classList.remove('hidden');
+  refs.loader.classList.add('hidden');
 }
 
 // Checking the page number where you`re at.
@@ -101,10 +109,9 @@ function checkButtonStatus() {
 // Smooth scrolling when "Load more" button is pressed.
 
 function smootherScrolling() {
-  const galleryItemRef = document.querySelector('.gallery-item');
+  const galleryItemRef = document.querySelector('.gallery__item');
   const galleryItemDim = galleryItemRef.getBoundingClientRect();
-  const scrollByNum =
-    galleryItemDim.height * 2 + galleryItemDim.height / 2 + 24;
+  const scrollByNum = galleryItemDim.height * 2 + galleryItemDim.height + 32;
   window.scrollBy({
     top: scrollByNum,
     left: 0,

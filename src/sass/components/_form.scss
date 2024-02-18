@@ -2,9 +2,7 @@
 @import '../base/mixins';
 
 .form {
-  margin-top: 36px;
   @include flex(8px);
-  outline: 1px solid tomato;
 
   &__input {
     padding: 8px 16px;

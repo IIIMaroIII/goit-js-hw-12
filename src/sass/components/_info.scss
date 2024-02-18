@@ -1,0 +1,17 @@
+.info {
+  @include flex(24px);
+  padding: 4px 24px;
+  text-align: center;
+
+  &__title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: $primary-font-color;
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 2;
+  }
+}

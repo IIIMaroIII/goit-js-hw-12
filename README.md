@@ -7,13 +7,10 @@
 # Replace vite.config.js
 
 <!--
-// vite.config.js
-
 import { defineConfig } from 'vite';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
-import ViteSassPlugin from 'vite-plugin-sass';
 
 export default defineConfig(({ command }) => {
   return {
@@ -37,53 +34,10 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
     },
-    plugins: [
-      ViteSassPlugin({
-        // Enable source maps for Sass
-        sourceMap: true,
-      }),
-      injectHTML(),
-      FullReload(['./src/**/**.html']),
-    ],
-    css: {
-      // Extract CSS into a separate file during development
-      extract: true,
-    },
+    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
 });
-
  -->
-
-import ViteSassPlugin from 'vite-plugin-sass'; import injectHTML from
-'vite-plugin-html'; import FullReload from 'vite-plugin-full-reload'; import
-glob from 'glob';
-
-export default defineConfig(({ command }) => { return { define: { [command ===
-'serve' ? 'global' : '_global']: {}, }, root: 'src', build: { sourcemap: true,
-
-      rollupOptions: {
-        input: glob.sync('./src/*.html'),
-        output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
-          },
-          entryFileNames: 'commonHelpers.js',
-        },
-      },
-      outDir: '../dist',
-    },
-    plugins: [
-      ViteSassPlugin({
-        // Enable source maps for Sass
-        sourceMap: true,
-      }),
-      injectHTML(),
-      FullReload(['./src/**/**.html']),
-    ],
-
-}; }); -->
 
 # import variables.scss in that file where you wanna use it.
 

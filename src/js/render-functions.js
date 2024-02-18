@@ -34,32 +34,32 @@ export function createGalleryItemMarkup(arr) {
         comments,
         downloads,
       }) => {
-        return `<li class="gallery-item">
-        <a class="gallery-link" href="${largeImageURL}">
+        return `<li class="gallery__item">
+        <a class="gallery__link" href="${largeImageURL}">
           <img
-            class="gallery-image"
+            class="gallery__image"
             src="${webformatURL}"
             data-source="${largeImageURL}"
             alt="${tags}"
             title="${tags}"
           />
         </a>
-        <ul class="gallery-info">
-        <li class="gallery-infoItem">
-        <h3 class="gallery-infoTitle">Likes</h3>
-        <p class="gallery-infoText">${likes}</p>
+        <ul class="info">
+        <li class="info__item">
+        <h3 class="info__title">Likes</h3>
+        <p class="info__text">${likes}</p>
         </li>
-        <li class="gallery-infoItem">
-        <h3 class="gallery-infoTitle">Views</h3>
-        <p class="gallery-infoText">${views}</p>
+        <li class="info__item">
+        <h3 class="info__title">Views</h3>
+        <p class="info__text">${views}</p>
         </li>
-        <li class="gallery-infoItem">
-        <h3 class="gallery-infoTitle">Comments</h3>
-        <p class="gallery-infoText">${comments}</p>
+        <li class="info__item">
+        <h3 class="info__title">Comments</h3>
+        <p class="info__text">${comments}</p>
         </li>
-        <li class="gallery-infoItem">
-        <h3 class="gallery-infoTitle">Downloads</h3>
-        <p class="gallery-infoText">${downloads}</p>
+        <li class="info__item">
+        <h3 class="info__title">Downloads</h3>
+        <p class="info__text">${downloads}</p>
         </li>
         </ul></li>`;
       }

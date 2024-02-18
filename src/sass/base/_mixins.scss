@@ -62,11 +62,13 @@
   $row-gap,
   $column-gap: $row-gap,
   $justify-content: center,
-  $align-items: center
+  $align-items: center,
+  $flex-wrap: nowrap
 ) {
   display: flex;
   row-gap: $row-gap;
   column-gap: $column-gap;
   justify-content: $justify-content;
   align-items: $align-items;
+  flex-wrap: $flex-wrap;
 }
