@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "vite build --base=/goit-js-hw-12/",
+    "start": "vite --host",
+    "build": "vite build --base=/goit-js-hw-12/; git add .; git commit -m 'update'; git push",
     "preview": "vite preview",
     "push": "git add .; git commit -m 'update'; git push"
   },
