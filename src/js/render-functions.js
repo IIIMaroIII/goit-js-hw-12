@@ -35,33 +35,35 @@ export function createGalleryItemMarkup(arr) {
         downloads,
       }) => {
         return `<li class="gallery__item">
-        <a class="gallery__link" href="${largeImageURL}">
-          <img
-            class="gallery__image"
-            src="${webformatURL}"
-            data-source="${largeImageURL}"
-            alt="${tags}"
-            title="${tags}"
-          />
-        </a>
-        <ul class="info">
-        <li class="info__item">
+  <a class="gallery__link" href="${largeImageURL}">
+    <img
+      class="gallery__image"
+      src="${webformatURL}"
+      data-source="${largeImageURL}"
+      alt="${tags}"
+      title="${tags}"
+    />
+   
+  </a>
+   <ul class="info">
+      <li class="info__item">
         <h3 class="info__title">Likes</h3>
         <p class="info__text">${likes}</p>
-        </li>
-        <li class="info__item">
+      </li>
+      <li class="info__item">
         <h3 class="info__title">Views</h3>
         <p class="info__text">${views}</p>
-        </li>
-        <li class="info__item">
+      </li>
+      <li class="info__item">
         <h3 class="info__title">Comments</h3>
         <p class="info__text">${comments}</p>
-        </li>
-        <li class="info__item">
+      </li>
+      <li class="info__item">
         <h3 class="info__title">Downloads</h3>
         <p class="info__text">${downloads}</p>
-        </li>
-        </ul></li>`;
+      </li>
+    </ul>
+</li>`;
       }
     )
     .join('')
