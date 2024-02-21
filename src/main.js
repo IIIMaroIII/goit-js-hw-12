@@ -4,7 +4,6 @@ import {
   createAndRenderGallery,
 } from './js/render-functions';
 import iconError from './img/error.svg';
-import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 // List of links
